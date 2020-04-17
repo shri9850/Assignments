@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             self.present(self.showAlert(title: "", msg: "No Internet Connection", btnTitle: "OK"), animated: true, completion: nil)
             return;
         }
-        let apiString = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
+        let apiString = "\(Constant.kBASE_URL)facts.json"
         guard let url = URL(string: apiString) else {return}
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
         guard let dataResponse = data,
